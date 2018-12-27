@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
 
-namespace Secret_Santa_Generator.Model
+namespace Secret_Santa_Generator.Model.Combination
 {
     public abstract class CombinationHandler
     {

@@ -6,6 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Secret_Santa_Generator.Model;
+using Secret_Santa_Generator.Model.Combination;
+using Secret_Santa_Generator.Model.IdsProvider;
+using Secret_Santa_Generator.Model.Persistent;
 using Secret_Santa_Generator.View;
 using Secret_Santa_Generator.ViewModel;
 
@@ -18,7 +21,10 @@ namespace Secret_Santa_Generator
     {
         private void App_OnStartup(object sender, StartupEventArgs e)
         {
-            var vm = new MainViewModel();
+            var idProviderFactory = new NoDuplicatesIdsProviderFactory(2);
+            var persistentManager = new JsonPersistentManager();
+            var persistentIdsProvider = new PersistentNoDuplicatesIdProvider(persistentManager, idProviderFactory);
+            var vm = new MainViewModel(persistentIdsProvider);
             var combinationHandler = new KonamiCodeCombinationHandler();
 
             var view = new MainView(vm, combinationHandler);

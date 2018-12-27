@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 
-namespace Secret_Santa_Generator.Model
+namespace Secret_Santa_Generator.Model.Combination
 {
     public class CollectionEnumeratorDecorator : IEnumerator<Key>
     {
