@@ -19,7 +19,9 @@ namespace Secret_Santa_Generator
         private void App_OnStartup(object sender, StartupEventArgs e)
         {
             var vm = new MainViewModel();
-            var view = new MainView(vm, new KonamiCodeCombinationHandler());
+            var combinationHandler = new KonamiCodeCombinationHandler();
+
+            var view = new MainView(vm, combinationHandler);
 
             view.ShowDialog();
         }
