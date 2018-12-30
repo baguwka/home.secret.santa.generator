@@ -38,5 +38,15 @@ namespace Secret_Santa_Generator.View
                 adminView.ShowDialog();
             }
         }
+
+        private void UIElement_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NextIdLabel.Visibility = Visibility.Visible;
+        }
+
+        private void UIElement_OnMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            NextIdLabel.Visibility = Visibility.Hidden;
+        }
     }
 }
